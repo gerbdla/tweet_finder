@@ -74,6 +74,7 @@ GEM
     multi_xml (0.6.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
+    pg (0.21.0)
     rack (1.6.8)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -162,6 +163,7 @@ DEPENDENCIES
   httparty
   jbuilder
   jquery-rails
+  pg
   rails (= 4.2.9)
   rails_12factor
   react-rails

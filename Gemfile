@@ -23,7 +23,7 @@ gem 'responders'
 gem 'react-rails'
 
 group :production do
-
+  gem 'pg'
   gem 'rails_12factor'
 
   gem 'rails', '4.2.9'

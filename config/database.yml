@@ -10,3 +10,10 @@ test:
   pool: 5
   timeout: 5000
 
+production:
+  adapter: postgresql
+  database: tweet_prod
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+
