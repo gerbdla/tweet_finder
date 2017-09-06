@@ -23,8 +23,9 @@ gem 'responders'
 gem 'react-rails'
 
 group :production do
+
   gem 'rails_12factor'
-  gem 'sqlite3'
+  
   gem 'rails', '4.2.9'
 
   gem 'httparty'
@@ -38,6 +39,10 @@ group :production do
   gem 'sdoc', group: :doc
   gem 'jquery-rails'
 
+end
+
+group :development, :production, :test do
+  gem "sqlite3", "~> 1.3.7", :require => "sqlite3"
 end
 
 ruby "2.4.0"
