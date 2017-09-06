@@ -25,7 +25,7 @@ gem 'react-rails'
 group :production do
 
   gem 'rails_12factor'
-  
+
   gem 'rails', '4.2.9'
 
   gem 'httparty'
