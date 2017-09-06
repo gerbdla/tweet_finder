@@ -1,20 +1,5 @@
 source 'https://rubygems.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.9'
-gem 'sqlite3'
-gem 'httparty'
-# Use SCSS for stylesheets
-gem 'sass-rails'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', group: :doc
-gem 'jquery-rails'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -36,3 +21,23 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'responders'
 gem 'react-rails'
+
+group :production do
+  gem 'rails_12factor'
+  gem 'sqlite3'
+  gem 'rails', '4.2.9'
+
+  gem 'httparty'
+# Use SCSS for stylesheets
+  gem 'sass-rails'
+# Use Uglifier as compressor for JavaScript assets
+  gem 'uglifier'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+  gem 'jbuilder'
+# bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', group: :doc
+  gem 'jquery-rails'
+
+end
+
+ruby "2.4.0"
