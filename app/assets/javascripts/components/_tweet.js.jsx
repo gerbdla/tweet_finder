@@ -17,7 +17,9 @@ var Tweet = React.createClass({
 
         return (
             <div class="tweets">
-                {tweet_text}
+                <table>
+                    <td><img src="twitter.png" alt="Twitter Image" height="30" align="middle"/></td><td>{tweet_text}</td>
+                </table>
 
             </div>
         )
