@@ -16,7 +16,7 @@ var Tweet = React.createClass({
         var tweet_text = <h3>{this.props.tweet.tweet_text}</h3>;
 
         return (
-            <div>
+            <div class="tweets">
                 {tweet_text}
 
             </div>

@@ -8,12 +8,10 @@ var AllTweets = React.createClass({
     },
 
     render() {
-            var tweets = this.props.tweets.map((tweet) => {
-                console.log(tweet)
+             var tweets = this.props.tweets.map((tweet) => {
                 return (
                     <div key={tweet.id}>
-                        <Tweet tweet={tweet}
-                              handleUpdate={this.onUpdate}/>
+                        <Tweet tweet={tweet} handleUpdate={this.onUpdate}/>
                     </div>
                 )
             });

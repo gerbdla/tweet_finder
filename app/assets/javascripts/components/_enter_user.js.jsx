@@ -1,12 +1,12 @@
 var EnterUser= React.createClass({
     handleClick() {
         var name    = this.refs.name.value;
-
         $.ajax({
             url: '/api/v1/tweets',
             type: 'POST',
             data: { user: { name: name } },
             success: (name) => {
+                console.log()
                 this.props.handleSubmit(name);
             }
         });

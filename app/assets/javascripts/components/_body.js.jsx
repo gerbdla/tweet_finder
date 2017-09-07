@@ -10,6 +10,7 @@ var Body = React.createClass({
 
 
     handleSubmit(tweet) {
+        this.state.tweets = []
         var newState = this.state.tweets.concat(tweet);
         this.setState({ tweets: newState })
     },
@@ -20,7 +21,7 @@ var Body = React.createClass({
         return (
             <div>
                 <EnterUser handleSubmit={this.handleSubmit}/>
-                <AllTweets  tweets={this.state.tweets}  handleDelete={this.handleDelete} onUpdate={this.handleUpdate}/>
+                <AllTweets  tweets={this.state.tweets}   onUpdate={this.handleUpdate}/>
             </div>
         )
     }
