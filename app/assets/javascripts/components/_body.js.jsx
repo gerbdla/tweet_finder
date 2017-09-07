@@ -9,13 +9,11 @@ var Body = React.createClass({
     },
 
 
-    handleSubmit(tweet) {
+    handleSubmit(tweets) {
         this.state.tweets = []
-        var newState = this.state.tweets.concat(tweet);
+        var newState = this.state.tweets.concat(tweets);
         this.setState({ tweets: newState })
     },
-
-
 
     render() {
         return (

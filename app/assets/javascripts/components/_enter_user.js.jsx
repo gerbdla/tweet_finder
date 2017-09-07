@@ -6,7 +6,6 @@ var EnterUser= React.createClass({
             type: 'POST',
             data: { user: { name: name } },
             success: (name) => {
-                console.log()
                 this.props.handleSubmit(name);
             }
         });
@@ -14,8 +13,8 @@ var EnterUser= React.createClass({
     render() {
         return (
                 <div>
-                    <input ref='name' placeholder='Enter the name of the twitter user' />
-                    <button onClick={this.handleClick}>Submit</button>
+                    <input ref='name' placeholder='Enter Screen Name' />
+                    <button onClick={this.handleClick}>Show Me The Tweets!</button>
                 </div>
 
         )
