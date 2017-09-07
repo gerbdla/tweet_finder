@@ -5,19 +5,25 @@ class Api::V1::TweetsController < Api::V1::BaseController
 
   def create
     service_tweets = TwitterService.get_tweets_for(params[:user][:name])
-
-    if service_tweets.count == 0
+     puts service_tweets
+    if service_tweets.key?(:error)
       tweets = {tweet_text: "No Tweets Were Found For #{params[:user][:name]}", id: 1}
     else
+      user = User.where(username: params[:user][:name]).first
+      if !user
+       user = User.create(username: params[:user][:name])
+      end
 
       service_tweets.each do |tweet|
-        single_tweet = Tweet.where(tweet_id: tweet["id"])
-        if single_tweet.count == 0 || !tweets[tweet_text: "No Tweets Were Found"]
+        single_tweet = Tweet.where(tweet_id: tweet["id"]).all
+        puts "this"
+        puts single_tweet.count
+        if single_tweet.count == 0
           tweet = Tweet.new(tweet_text: tweet["text"], tweet_id: tweet["id"])
-          tweet.user = params[:user][:name]
+          tweet.user = user
           tweet.save
         end
-        tweets = Tweet.user.where(name: params[:user][:name]).last(10)
+        tweets = Tweet.where(user_id: user.id).last(10)
       end
     end
 
