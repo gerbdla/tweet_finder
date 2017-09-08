@@ -6,7 +6,7 @@ class Tweet < ApplicationRecord
     TwitterService.get_tweets_for(params[:user][:name])
   end
 
-  def self.format_tweets_for_response(service_tweets)
+  def self.format_tweets_for_response(service_tweets, user)
     service_tweets.each do |tweet|
       single_tweet = Tweet.where(tweet_id: tweet["id"]).all
       if single_tweet.count == 0
