@@ -1,6 +1,7 @@
 class Api::V1::TweetsController < Api::V1::BaseController
+
   def index
-    respond_with ""
+    render nothing: true
   end
 
   def create
@@ -26,6 +27,6 @@ class Api::V1::TweetsController < Api::V1::BaseController
   private
 
   def item_params
-    params.require(:tweet).permit(:id, :tweet_text)
+    params.require(:tweet).permit(:id, :tweet_text, :user_id)
   end
 end
