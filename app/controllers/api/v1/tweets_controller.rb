@@ -18,7 +18,7 @@ class Api::V1::TweetsController < Api::V1::BaseController
 
        Tweet.format_tweets_for_response(service_tweets, user)
 
-       tweets = Tweet.where(user_id: user.id).order(:created_at).last(10)
+       tweets = Tweet.where(user_id: user.id).order(tweet_created_at: :desc ).last(10)
       end
 
     respond_with tweets, json: tweets
