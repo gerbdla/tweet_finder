@@ -2,8 +2,8 @@ class Tweet < ApplicationRecord
   belongs_to :user
 
 
-  def self.get_tweets(params)
-    TwitterService.get_tweets_for(params[:user][:name])
+  def self.get_tweets(username)
+    TwitterService.get_tweets_for(username)
   end
 
   def self.format_tweets_for_response(service_tweets, user)
@@ -15,6 +15,5 @@ class Tweet < ApplicationRecord
         tweet.save
       end
     end
-
   end
 end

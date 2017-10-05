@@ -30,4 +30,14 @@ class TwitterService
       response
   end
 
+  def self.verify_and_return_username(username)
+
+      if username.start_with?('@')
+        return username
+      else
+        return "@#{username}"
+      end
+
+  end
+
 end
